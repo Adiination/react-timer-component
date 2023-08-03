@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Timer from "./components/Timer";
 
 function App() {
+  const handleTimerEnd = () => {
+    alert("time is up!");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>timer</h1>
+
+      <Timer time={30} direction="clockwise" end={handleTimerEnd} />
+      <Timer time={20} direction="anticlockwise" end={handleTimerEnd} />
     </div>
   );
 }
